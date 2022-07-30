@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SignUpActivity">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="50dp"
+        android:background="@color/primary_dark"
+        >
+
+        <ImageView
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+
+            android:layout_gravity="center"
+            android:src="@drawable/books"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/signup"
+            android:layout_marginTop="5dp"
+            android:textSize="16dp"
+            android:layout_gravity="center"
+            android:textColor="@color/white"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="Email"
+            android:textColor="@color/white"
+            android:textSize="12sp"
+            />
+
+        <EditText
+            android:id="@+id/sign_up_email"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:inputType="textEmailAddress"
+            android:background="@drawable/coustom_in_search"
+            android:hint="example@mail.com"
+            android:paddingLeft="10dp"
+            android:textColor="@color/white"
+            android:textColorHint="@color/white"
+            android:textSize="12sp"
+
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="Username"
+            android:textColor="@color/white"
+            android:textSize="12sp"
+            />
+
+
+        <EditText
+            android:id="@+id/sign_up_name"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:inputType="text"
+            android:background="@drawable/coustom_in_search"
+            android:hint="Username"
+            android:paddingLeft="10dp"
+            android:textColor="@color/white"
+            android:textSize="12sp"
+            android:textColorHint="@color/white"
+
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Password"
+            android:layout_marginTop="20dp"
+            android:textColor="@color/white"
+            android:textSize="12sp"
+
+            />
+
+        <EditText
+            android:id="@+id/sign_up_password"
+            android:layout_marginTop="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:inputType="textPassword"
+            android:background="@drawable/coustom_in_search"
+            android:textColor="@color/white"
+            android:textColorHint="@color/white"
+            android:hint="*******"
+            android:paddingLeft="10dp"
+            android:textSize="12sp"
+
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Password must contain at least 8 characters"
+            android:layout_gravity="end"
+            android:textSize="10sp"
+            android:textColor="@color/secondary_text"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Confirm Password"
+            android:layout_marginTop="20dp"
+            android:textColor="@color/white"
+            android:textSize="12sp"
+
+            />
+
+        <EditText
+            android:id="@+id/sign_up_con_password"
+            android:layout_marginTop="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:inputType="textPassword"
+            android:background="@drawable/coustom_in_search"
+            android:textColor="@color/white"
+            android:textColorHint="@color/white"
+            android:hint="*******"
+            android:paddingLeft="10dp"
+            android:textSize="12sp"
+
+            />
+
+
+        <Button
+            android:id="@+id/sign_up_btn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:background="@drawable/round_button"
+            android:text="SignUp"
+            android:textColor="@color/secondary_text"
+            android:textAllCaps="false" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"
+            android:text="Already have an Account ?"
+            android:textSize="12sp"
+            android:textColor="@color/white"/>
+
+        <Button
+            android:id="@+id/singup_login_btn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/round_button"
+            android:text="LogIn"
+            android:textAllCaps="false"
+            android:textColor="@color/secondary_text" />
+
+
+    </LinearLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

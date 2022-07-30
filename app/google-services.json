@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "1076190784875",
+    "project_id": "ez-libry",
+    "storage_bucket": "ez-libry.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1076190784875:android:05da94b1d7874e0f64f02e",
+        "android_client_info": {
+          "package_name": "com.gh0s8.e_zbooks"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1076190784875-ff4p860b6v2f6opgqmrf6obgm9cstbvm.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.gh0s8.e_zbooks",
+            "certificate_hash": "5b727a58dac9e4faf2f8779998b83fd81557d164"
+          }
+        },
+        {
+          "client_id": "1076190784875-addt2eutd3i52sip50c3ird8s3inbup6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB9PUfTf3rivfRrANtMFM1laVgDZCwR6pU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1076190784875-addt2eutd3i52sip50c3ird8s3inbup6.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/primary"
+    >
+
+
+    <ImageView
+        android:id="@+id/profileImg"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_gravity="bottom"
+        android:layout_marginTop="10dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginBottom="15dp"
+        tools:srcCompat="@tools:sample/avatars"
+        android:visibility="gone"/>
+
+    <TextView
+        android:id="@+id/uname"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:layout_marginStart="120dp"
+        android:text="Pasindu"
+        android:textColor="@color/white"
+        android:visibility="gone"
+        />
+
+    <TextView
+        android:id="@+id/usr_email"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:layout_marginStart="120dp"
+        android:layout_marginTop="20dp"
+        android:text="pasindu@gmail.com"
+        android:textColor="@color/white"
+        android:visibility="gone"
+        />
+
+    <TextView
+
+        android:id="@+id/hedder_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Not Logged In"
+        android:layout_gravity="bottom"
+        android:gravity="center"
+        android:textSize="12sp"
+        android:textColor="@color/white"
+        android:layout_marginTop="20dp"
+        />
+
+
+
+
+</FrameLayout>

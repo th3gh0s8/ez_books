@@ -12,7 +12,8 @@
             android:id="@+id/side_nave_profile"
             android:title="@string/profile"
             android:visible="false"
-            android:icon="@drawable/profile" />
+            android:icon="@drawable/profile"
+            />
 
         <item
             android:id="@+id/side_nave_order"

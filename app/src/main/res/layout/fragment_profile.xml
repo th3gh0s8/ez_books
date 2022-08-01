@@ -1,16 +1,299 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.profile.ProfileFragment">
+    tools:context=".ui.profile.ProfileFragment"
+    android:orientation="vertical"
+    android:padding="10dp"
+    android:background="@color/primary"
 
-    <!-- TODO: Update blank fragment layout -->
+
+    >
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/profile_image"
+        android:layout_width="130dp"
+        android:layout_height="130dp"
+        android:src="@drawable/book"
+        app:civ_border_color="@color/white"
+        app:civ_border_width="2dp"
+        android:layout_marginTop="30dp"
+        android:layout_gravity="center"
+        />
+
     <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:gravity="center"
-        android:text="@string/profile"
-      />
+        android:id="@+id/profile_uname"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"
+        android:text="User"
+        android:textSize="12sp"
+        android:textStyle="bold"
+        android:textColor="@color/white"
+        />
+    <TextView
+        android:id="@+id/profile_email"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:textSize="12sp"
+        android:text="example@mail.com"
+        android:textColor="@color/white"
+        />
 
-</FrameLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_margin="10dp"
+
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/cart_size"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="test"
+                android:gravity="center"
+                android:layout_weight="1"
+                android:textStyle="bold"
+                android:textSize="12sp"
+                android:textColor="@color/white"/>
+
+
+            <TextView
+                android:id="@+id/wishlist_size"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="test"
+                android:textColor="@color/white"
+                android:textSize="12sp"
+                android:textStyle="bold" />
+
+
+            <TextView
+                android:id="@+id/order_size"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="test"
+                android:gravity="center"
+                android:layout_weight="1"
+                android:textStyle="bold"
+                android:textSize="12sp"
+                android:textColor="@color/white"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="in Cart"
+                android:gravity="center"
+                android:layout_weight="1"
+
+                android:textSize="12sp"
+                android:textColor="@color/white"
+
+            />
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="in WishList"
+                android:gravity="center"
+                android:layout_weight="1"
+
+                android:textSize="12sp"
+                android:textColor="@color/white"/>
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="in ordered"
+                android:gravity="center"
+                android:layout_weight="1"
+
+                android:textSize="12sp"
+                android:textColor="@color/white"/>
+
+        </LinearLayout>
+
+        
+
+    </LinearLayout>
+
+    <com.google.android.material.divider.MaterialDivider
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+
+
+
+        />
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginEnd="40dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+       >
+
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start"
+                      >
+
+            <Button
+
+                android:id="@+id/profile_orders"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton.Icon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:drawableStart="@drawable/assignment"
+
+
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:text="Orders"
+                android:textSize="12sp"
+                android:layout_marginTop="50dp"
+                android:layout_gravity="center|bottom"
+
+                android:textColor="@color/white"
+                />
+
+
+
+
+
+
+        </FrameLayout>
+
+
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center">
+
+            <Button
+
+                android:id="@+id/profile_1"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton.Icon"
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawableStart="@drawable/ic_baseline_perm_identity_24"
+
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:text="user"
+                android:textSize="12sp"
+                android:layout_marginTop="50dp"
+                android:layout_gravity="center|bottom"
+
+                android:textColor="@color/white"
+                />
+
+
+        </FrameLayout>
+
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end">
+
+
+            <Button
+
+                android:id="@+id/profile_2"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton.Icon"
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawableStart= "@drawable/location_on"
+
+
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:text="Address"
+                android:textSize="12sp"
+                android:layout_marginTop="50dp"
+                android:layout_gravity="center|bottom"
+
+                android:textColor="@color/white"
+                />
+
+
+        </FrameLayout>
+
+
+
+
+    </FrameLayout>
+
+
+
+    <com.google.android.material.divider.MaterialDivider
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+
+
+
+        />
+
+
+
+
+
+    <Button
+        android:id="@+id/profile_purchase_history"
+        android:layout_width="233dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/round_button"
+        android:backgroundTint="@color/primary_light"
+        android:drawableStart="@drawable/location_on"
+        android:padding="10dp"
+        android:text="purchase_history"
+        android:textAllCaps="false"
+        android:textSize="14sp"
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_gravity="center"
+         />
+
+</LinearLayout>

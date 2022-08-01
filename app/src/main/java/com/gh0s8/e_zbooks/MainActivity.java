@@ -180,7 +180,20 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             drawerLayout.closeDrawer(GravityCompat.START);
 
         }else {
-            super.onBackPressed();
+
+            int entryCount = getSupportFragmentManager().getBackStackEntryCount();
+            Log.i(TAG,entryCount+"");
+
+            if (entryCount > 0 ){
+
+                getSupportFragmentManager().popBackStack();
+
+            }else {
+
+                super.onBackPressed();
+
+            }
+
         }
     }
 
@@ -195,19 +208,34 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 loadFragment(new HomeFragment());
                 break;
             case R.id.side_nave_profile:
-//                loadFragment(new ProfileFragment());
-//                break;
-            case  R.id.bot_nav_prof:
                 if (firebaseAuth.getCurrentUser() != null){
 
                     loadFragment(new ProfileFragment());
+//                    break;
 
                 }else {
 
                     startActivity(new Intent(MainActivity.this,SignInActivity.class));
+//                    break;
 
                 }
+                break;
+            case  R.id.bot_nav_prof:
+                if (firebaseAuth.getCurrentUser() != null){
 
+                    loadFragment(new ProfileFragment());
+//                    break;
+
+                }else {
+
+
+                    Intent intent = new Intent(MainActivity.this,SignInActivity.class);
+                    startActivity(intent);
+
+//                    break;
+
+
+                }
                 break;
             case R.id.side_nave_order:
 
@@ -234,14 +262,15 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 if (firebaseAuth.getCurrentUser() != null){
 
                     loadFragment(new LybryFragment());
-
+                    break;
                 }else {
 
                     startActivity(new Intent(MainActivity.this,SignInActivity.class));
-
+//                    break;
                 }
-
                 break;
+
+
         }
         return true;
     }

@@ -13,8 +13,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.gh0s8.e_zbooks.R;
-import com.gh0s8.e_zbooks.ui.home.HomeFragment;
-import com.gh0s8.e_zbooks.ui.libry.LybryFragment;
+
 import com.gh0s8.e_zbooks.ui.settings.ChangePasswordFragment;
 
 

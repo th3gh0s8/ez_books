@@ -48,10 +48,10 @@
             android:inputType="textEmailAddress"
             android:background="@drawable/coustom_in_search"
             android:hint="example@mail.com"
-            android:textColor="@color/white"
+            android:textColor="@color/secondary_text"
             android:textSize="12sp"
             android:paddingLeft="10dp"
-            android:textColorHint="@color/white"
+            android:textColorHint="@color/divider"
 
             />
         <TextView
@@ -71,8 +71,8 @@
             android:layout_height="40dp"
             android:inputType="textPassword"
             android:background="@drawable/coustom_in_search"
-            android:textColor="@color/white"
-            android:textColorHint="@color/white"
+            android:textColor="@color/secondary_text"
+            android:textColorHint="@color/divider"
             android:hint="*******"
             android:paddingLeft="10dp"
             android:textSize="12sp"

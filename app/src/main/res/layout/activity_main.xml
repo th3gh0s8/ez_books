@@ -38,9 +38,11 @@
                 android:drawableStart="@drawable/search"
                 android:hint="Search"
 
-                android:textColor="@color/white"
-                android:textColorHint="@color/white"
+                android:textColor="@color/secondary_text"
+                android:textColorHint="@color/divider"
                 android:background="@drawable/coustom_in_search"
+
+                android:textStyle="bold"
 
                 android:drawablePadding="10dp"
                 android:paddingEnd="10dp"
@@ -74,7 +76,7 @@
         android:layout_gravity="start"
         app:headerLayout="@layout/drawer_header_layout"
         app:menu="@menu/side_nav_menu"
-        app:itemTextColor="@color/black"
+        app:itemTextColor="@color/secondary_text"
         android:background="@color/primary_light"
         app:itemIconTint="@drawable/coustom_icon"
 

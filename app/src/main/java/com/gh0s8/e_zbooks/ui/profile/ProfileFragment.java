@@ -14,10 +14,19 @@ import android.view.ViewGroup;
 
 import com.gh0s8.e_zbooks.R;
 
+import com.gh0s8.e_zbooks.model.Catagory;
 import com.gh0s8.e_zbooks.ui.settings.ChangePasswordFragment;
+import com.google.firebase.firestore.CollectionReference;
+import com.google.firebase.firestore.FirebaseFirestore;
+
+import java.util.ArrayList;
+import java.util.List;
 
 
 public class ProfileFragment extends Fragment {
+
+
+    //private FirebaseFirestore firebaseFirestore;
 
 
     public ProfileFragment() {
@@ -30,7 +39,37 @@ public class ProfileFragment extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+        //firebaseFirestore =FirebaseFirestore.getInstance();
+
+
+
+
+
+
+
+       // insertData();
+
     }
+
+//    private void insertData() {
+//
+//
+//        CollectionReference reference = firebaseFirestore.collection("categories");
+//
+//
+//        List<Catagory> catagories = new ArrayList<>();
+//        catagories.add(new Catagory(1,"",""));
+//        catagories.add(new Catagory(1,"",""));
+//        catagories.add(new Catagory(1,"",""));
+//        catagories.add(new Catagory(1,"",""));
+//        catagories.add(new Catagory(1,"",""));
+//
+//
+//        reference.add(catagories);
+//
+//
+//
+//    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -58,7 +97,7 @@ public class ProfileFragment extends Fragment {
 
         FragmentManager supFragMan = getParentFragmentManager();
         FragmentTransaction fragoTran = supFragMan.beginTransaction();
-        fragoTran.replace(R.id.container, fragment);
+        fragoTran.add(R.id.container, fragment);
         fragoTran.addToBackStack("account");
 
         fragoTran.commit();

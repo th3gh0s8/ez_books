@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".SignInActivity"
+    tools:context=".ui.register.SignInActivity"
     android:theme="@style/Theme.EZbooks.FullScreen">
 
     <LinearLayout
@@ -87,6 +87,18 @@
             android:textSize="12sp"
             android:textColor="@color/white"/>
 
+<!--        <Button-->
+<!--            android:id="@+id/login_btn"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginTop="50dp"-->
+<!--            android:text="Log In"-->
+<!--            android:background="@drawable/round_button"-->
+<!--            android:textColor="@color/secondary_text"-->
+<!--            android:textAllCaps="false"-->
+
+
+<!--            />-->
         <Button
             android:id="@+id/login_btn"
             android:layout_width="match_parent"
@@ -94,8 +106,11 @@
             android:layout_marginTop="50dp"
             android:text="Log In"
             android:background="@drawable/round_button"
+            android:textSize="20sp"
             android:textColor="@color/secondary_text"
             android:textAllCaps="false"
+
+
 
 
             />
@@ -108,6 +123,7 @@
             android:textSize="12sp"
             android:textColor="@color/white"/>
 
+
         <Button
             android:id="@+id/login_btn_singup"
             android:layout_width="match_parent"
@@ -116,7 +132,30 @@
             android:text="Sign Up"
             android:textColor="@color/secondary_text"
             android:textAllCaps="false"
+            android:textSize="20sp"
+
+
             />
+
+        <Button
+            android:id="@+id/google"
+            android:layout_width="233dp"
+            android:layout_height="45dp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/round_button"
+            android:layout_gravity="center"
+            android:drawableStart="@drawable/google"
+            android:padding="10dp"
+            android:text="Continue with Google"
+            android:textAllCaps="false"
+            android:textSize="16sp"
+            android:textColor="@color/secondary_text"
+            />
+
+<!--        android:textStyle=""-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/or"-->
 
 
     </LinearLayout>

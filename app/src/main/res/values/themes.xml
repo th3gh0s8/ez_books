@@ -40,4 +40,14 @@
 
 
     </style>
+    <style name="NavTextStyle" parent="android:Widget.TextView">
+        <item name="android:textSize">11sp</item>
+    </style>
+
+    <style name="Theme.home" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimary">@color/primaryColor</item>
+        <item name="colorSecondary">@color/secondaryColor </item>
+        <item name="colorOnSecondary">@color/white </item>
+        <item name="colorOnPrimary">@color/background </item>
+    </style>
 </resources>

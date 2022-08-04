@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/ctr_bg"
+    tools:context=".GoogleActivity">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appbar"
+        android:layout_width="match_parent"
+        android:layout_height="280dp"
+        android:fitsSystemWindows="true"
+        android:theme="@style/Theme.home">
+
+        <com.google.android.material.appbar.CollapsingToolbarLayout
+            android:id="@+id/collapsing_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fitsSystemWindows="true"
+            app:contentScrim="?attr/colorPrimary"
+            app:layout_scrollFlags="scroll|snap|exitUntilCollapsed"
+            app:title="Google"
+
+            android:background="@drawable/ctr_bg">
+
+            <ImageView
+                android:layout_width="214dp"
+                android:layout_height="191dp"
+                android:layout_gravity="center|end"
+                android:layout_marginEnd="30dp"
+                android:layout_marginBottom="15dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/books"
+                app:layout_collapseMode="parallax" />
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                app:layout_collapseMode="pin"/>
+
+
+        </com.google.android.material.appbar.CollapsingToolbarLayout>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/layout_bg"
+        android:padding="20dp"
+        app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior">
+
+
+        <TextView
+            android:id="@+id/dev_txt_"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="If you have any Google account you can register use to it and tap the 'Your Google Account'. If you haven't any Google Account then you can crete and register now below. if you already registed with using google account tap the 'One Tap Sign In' Button "
+
+            android:textSize="15sp"
+            android:padding="12sp"
+            android:textColor="@color/black"/>
+
+    </androidx.core.widget.NestedScrollView>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:baselineAlignBottom="false"
+        android:clickable="true"
+        android:src="@drawable/google"
+        app:fabSize="normal"
+        app:layout_anchor="@id/appbar"
+        app:layout_anchorGravity="end|bottom"
+        android:layout_marginRight="30dp"
+        android:backgroundTint="@color/white"/>
+
+
+    <Button
+        android:id="@+id/btnGoogleSignIn"
+        android:layout_width="250dp"
+        android:layout_height="40dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="480dp"
+        android:background="@drawable/transparent_button"
+
+        android:textColor="#2196F3"
+        android:text="Your Google Account"
+        android:textSize="18sp" />
+
+    <Button
+        android:id="@+id/btnOneTapSignIn"
+        android:layout_width="250dp"
+        android:layout_height="40dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="510dp"
+        android:background="@drawable/transparent_button"
+
+        android:textColor="#2196F3"
+        android:text="One Tap Sign In"
+        android:textSize="18sp" />
+
+    <ImageButton
+        android:id="@+id/img_G"
+        android:layout_width="55dp"
+        android:layout_height="39dp"
+        android:layout_below="@+id/edt_password"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="145dp"
+        android:layout_marginTop="440dp"
+        android:background="@drawable/transparent_button"
+        android:src="@drawable/google" />
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

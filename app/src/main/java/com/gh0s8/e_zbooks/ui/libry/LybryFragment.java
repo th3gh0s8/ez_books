@@ -61,11 +61,29 @@ public class LybryFragment extends Fragment {
 
     }
 
+//    @Override
+//    public void onStart() {
+//        super.onStart();
+//
+//        MainActivity activity=(MainActivity) getActivity();
+//        activity.showBotoomNavigationViwe(true);
+//
+//
+//
+//    }
+
     private void insertData() {
 
 
         CollectionReference reference = firebaseFirestore.collection("categories");
 
+
+//        List<Catagory> catagories = new ArrayList<>();
+//        catagories.add(new Catagory("1","Fantacy",""));
+//        catagories.add(new Catagory("2","Novel",""));
+//        catagories.add(new Catagory("3","Education",""));
+//        catagories.add(new Catagory("4","History",""));
+//        catagories.add(new Catagory("5","religious",""));
 
         List<Catagory> catagories = new ArrayList<>();
         catagories.add(new Catagory("1","Fantacy",""));
@@ -73,13 +91,6 @@ public class LybryFragment extends Fragment {
         catagories.add(new Catagory("3","Education",""));
         catagories.add(new Catagory("4","History",""));
         catagories.add(new Catagory("5","religious",""));
-
-//        List<Catagory> catagories = new ArrayList<>();
-//        catagories.add(new Catagory(1,"Fantacy",""));
-//        catagories.add(new Catagory(2,"Novel",""));
-//        catagories.add(new Catagory(3,"Education",""));
-//        catagories.add(new Catagory(4,"History",""));
-//        catagories.add(new Catagory(5,"religious",""));
 
         //reference.add(catagories);
 
@@ -104,6 +115,12 @@ public class LybryFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
+
+
+//        MainActivity activity=(MainActivity) getActivity();
+//        activity.showBottomNavigationView(true);
+
+
         return inflater.inflate(R.layout.fragment_lybry, container, false);
     }
 
@@ -112,8 +129,8 @@ public class LybryFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        recyclerView = view.findViewById(R.id.order_res_view);
-        recyclerView.setLayoutManager(new LinearLayoutManager (view.getContext()));
+        recyclerView = view.findViewById(R.id.wishlist_res_view);
+        recyclerView.setLayoutManager(new LinearLayoutManager(view.getContext()));
         CategoryAdapter adapter =new CategoryAdapter(catagoryList, view.getContext() );
         recyclerView.setAdapter(adapter);
 

@@ -1,14 +1,5 @@
 package com.gh0s8.e_zbooks;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.ActionBarDrawerToggle;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.view.GravityCompat;
-import androidx.drawerlayout.widget.DrawerLayout;
-import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentTransaction;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -18,13 +9,23 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.ActionBarDrawerToggle;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.view.GravityCompat;
+import androidx.drawerlayout.widget.DrawerLayout;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
+
+import com.bumptech.glide.Glide;
 import com.gh0s8.e_zbooks.model.User;
+import com.gh0s8.e_zbooks.ui.cart.CartFragment;
 import com.gh0s8.e_zbooks.ui.home.HomeFragment;
 import com.gh0s8.e_zbooks.ui.libry.LybryFragment;
 import com.gh0s8.e_zbooks.ui.profile.ProfileFragment;
+import com.gh0s8.e_zbooks.ui.register.SignInActivity;
 import com.gh0s8.e_zbooks.ui.wishilist.WishListFragment;
-
-import com.bumptech.glide.Glide;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.android.material.appbar.MaterialToolbar;
@@ -49,6 +50,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     private FirebaseAuth firebaseAuth;
     private FirebaseFirestore firebaseFirestore;
 
+
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -65,22 +69,30 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         firebaseFirestore =FirebaseFirestore.getInstance();
 
 
-
-
-//        if (firebaseAuth.getCurrentUser() != null){
-//
-//            UpdateUI(firebaseAuth.getCurrentUser());
-//            Log.i(TAG,firebaseAuth.getUid());
-//
-//        }else {
-//
-//            Log.i(TAG,"No user");
-//
+        FirebaseUser currentUser = firebaseAuth.getCurrentUser();
+//        TextView textview = findViewById(R.id.usr_email);
+//        if (user != null){
+//            textview.setText(user.getEmail());
 //        }
 
 
 
-        UpdateUI(firebaseAuth.getCurrentUser());
+
+
+        if (firebaseAuth.getCurrentUser() != null){
+
+            UpdateUI(firebaseAuth.getCurrentUser());
+            Log.i(TAG,firebaseAuth.getUid());
+
+        }else {
+
+            Log.i(TAG,"No user");
+
+        }
+
+
+
+        UpdateUI(currentUser);
 
 
 
@@ -98,7 +110,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         navigationView.setNavigationItemSelectedListener(this);
         bottomNavigationView.setOnItemSelectedListener(this);
 
-        loadFragment(new HomeFragment());
+
+       loadFragment(new HomeFragment());
     }
 
     private void UpdateUI(FirebaseUser currentUser) {
@@ -202,8 +215,10 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         switch (item.getItemId()){
             case R.id.side_nave_home:
+
                 loadFragment(new HomeFragment());
                 break;
+
             case  R.id.bot_nav_home:
                 loadFragment(new HomeFragment());
                 break;
@@ -211,20 +226,20 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 if (firebaseAuth.getCurrentUser() != null){
 
                     loadFragment(new ProfileFragment());
-//                    break;
+                    break;
 
                 }else {
 
-                    startActivity(new Intent(MainActivity.this,SignInActivity.class));
-//                    break;
+                    startActivity(new Intent(MainActivity.this, SignInActivity.class));
+                    break;
 
                 }
-                break;
+
             case  R.id.bot_nav_prof:
                 if (firebaseAuth.getCurrentUser() != null){
 
                     loadFragment(new ProfileFragment());
-//                    break;
+                    break;
 
                 }else {
 
@@ -232,19 +247,30 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                     Intent intent = new Intent(MainActivity.this,SignInActivity.class);
                     startActivity(intent);
 
-//                    break;
+                    break;
 
 
                 }
-                break;
+
             case R.id.side_nave_order:
 
+                loadFragment(new LybryFragment());
+
                 break;
+
+
             case R.id.side_nave_wishlist:
                 loadFragment(new WishListFragment());
                 break;
             case R.id.side_nave_setings:
+
+                Intent i = new Intent(MainActivity.this, OtpActivity.class);
+                startActivity(i);
+
                 break;
+
+
+
             case R.id.side_nave_login:
 
                 Intent intent = new Intent(MainActivity.this,SignInActivity.class);
@@ -266,9 +292,16 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 }else {
 
                     startActivity(new Intent(MainActivity.this,SignInActivity.class));
-//                    break;
+                   break;
+                }
+            case R.id.bot_nav_cart:
+                if (firebaseAuth.getCurrentUser() != null) {
+                    loadFragment(new CartFragment());
+                } else {
+                    startActivity(new Intent(MainActivity.this, SignInActivity.class));
                 }
                 break;
+
 
 
         }
@@ -277,17 +310,105 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
     public void loadFragment(Fragment fragment){
 
-        FragmentManager supFragMan =getSupportFragmentManager();
-        FragmentTransaction fragoTran = supFragMan.beginTransaction();
-        fragoTran.replace(R.id.container,fragment);
-        fragoTran.commit();
+        FragmentManager supportFragmentManager =getSupportFragmentManager();
+        FragmentTransaction fragmentTransaction = supportFragmentManager.beginTransaction();
+        fragmentTransaction.add(R.id.container,fragment);
 
-        //sohort version
-        // getSupportFragmentManager().beginTransaction().replace(R.id.container,fragment).commit();
+//        if(addToBackStack){
+//
+//
+//            fragmentTransaction.addToBackStack(null);
+//
+//
+//        }
+
+//
+        fragmentTransaction.commit();
+
+//        sohort version
+         getSupportFragmentManager().beginTransaction().replace(R.id.container,fragment).commit();
     }
 
-    @Override
-    public void onPointerCaptureChanged(boolean hasCapture) {
-        super.onPointerCaptureChanged(hasCapture);
+//    public void loadFragment(Fragment fragmen) {
+//
+//        FragmentManager supFragMan = getSupportFragmentManager();
+//        FragmentTransaction fragoTran = supFragMan.beginTransaction();
+//        fragoTran.add(R.id.container, fragment);
+//        fragoTran.addToBackStack("account");
+//
+//        fragoTran.commit();
+//    }
+
+
+
+
+//    @Override
+//    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+//
+//        switch (item.getItemId()) {
+//            case R.id.side_nave_home:
+//            case R.id.bot_nav_home:
+//                loadFragment(new HomeFragment(), false);
+//                break;
+//            case R.id.side_nave_profile:
+//            case R.id.bot_nav_prof:
+////                if (firebaseAuth.getCurrentUser() != null) {
+////                    loadFragment(new ProfileFragment(), false);
+////                }
+////                else {
+////                    startActivity(new Intent(MainActivity.this, SignInActivity.class));
+////                }
+//                break;
+////            case R.id.bottom_nav_cart:
+////                if (firebaseAuth.getCurrentUser() != null) {
+////                    loadFragment(new CartFragment(), false);
+////                } else {
+////                    startActivity(new Intent(MainActivity.this, SignInActivity.class));
+////                }
+////                break;
+////            case R.id.side_nave_order:
+////                loadFragment(new CategoriesFragment(), true);
+////                break;
+////            case R.id.side_nav_orders:
+////                loadFragment(new OrdersFragment(), false);
+////                break;
+////            case R.id.side_nav_wishlist:
+////                loadFragment(new WishlistFragment(), false);
+////                break;
+////            case R.id.side_nav_message:
+////                loadFragment(new MessageFragment(), false);
+////                break;
+//            case R.id.side_nave_login:
+//                Intent intent = new Intent(MainActivity.this, SignInActivity.class);
+//                startActivity(intent);
+//                break;
+//            case R.id.side_nave_logout:
+//                firebaseAuth.signOut();
+//                finish();
+//                startActivity(getIntent());
+//                break;
+//
+//        }
+//        return true;
+//    }
+
+//    public void loadFragment(Fragment fragment, boolean addToBackStack) {
+//        FragmentManager supportFragmentManager = getSupportFragmentManager();
+//        FragmentTransaction fragmentTransaction = supportFragmentManager.beginTransaction();
+//        fragmentTransaction.replace(R.id.container, fragment);
+//        if (addToBackStack){
+//            fragmentTransaction.addToBackStack(null);
+//        }
+//        fragmentTransaction.commit();
+//
+//    }
+//
+    public void showBottomNavigationView(boolean show){
+        if (show){
+            bottomNavigationView.setVisibility(View.VISIBLE);
+        }else{
+            bottomNavigationView.setVisibility(View.VISIBLE);
+        }
     }
+
 }

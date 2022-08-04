@@ -4,14 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".SignUpActivity">
+    tools:context=".ui.register.SignUpActivity">
 
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        android:padding="50dp"
+        android:padding="10dp"
         android:background="@color/primary_dark"
         >
 
@@ -114,7 +114,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Confirm Password"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="5dp"
             android:textColor="@color/white"
             android:textSize="12sp"
 
@@ -137,14 +137,19 @@
 
 
         <Button
-            android:id="@+id/sign_up_btn"
+            android:id="@+id/sign_up_next_btn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="50dp"
+            android:layout_marginTop="20dp"
             android:background="@drawable/round_button"
-            android:text="SignUp"
+            android:text="Next"
             android:textColor="@color/secondary_text"
-            android:textAllCaps="false" />
+            android:drawableEnd="@drawable/arrow_forward_ios"
+            android:paddingStart="60dp"
+            android:paddingEnd="90dp"
+
+            android:textAllCaps="false"
+            android:textSize="18sp"/>
 
         <TextView
             android:layout_width="wrap_content"
@@ -162,10 +167,50 @@
             android:background="@drawable/round_button"
             android:text="LogIn"
             android:textAllCaps="false"
+            android:textSize="16sp"
             android:textColor="@color/secondary_text" />
+<!--        <Button-->
+<!--            android:id="@+id/singup_login_btn"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:background="@drawable/round_button"-->
+<!--            android:text="LogIn"-->
+<!--            android:textAllCaps="false"-->
+<!--            android:textColor="@color/secondary_text" />-->
+<!--        <Button-->
+<!--            android:id="@+id/login_btn_singup"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:background="@drawable/round_button"-->
+<!--            android:text="next"-->
+<!--            android:textColor="@color/secondary_text"-->
+<!--            android:drawableEnd="@drawable/arrow_forward_ios"-->
+<!--            android:paddingRight="70dp"-->
+<!--            android:paddingLeft="50dp"-->
+<!--            android:textAllCaps="false"-->
+<!--            android:textSize="20sp"-->
+
+
+<!--            />-->
+        <Button
+            android:id="@+id/google"
+            android:layout_width="233dp"
+            android:layout_height="45dp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/round_button"
+            android:layout_gravity="center"
+            android:drawableStart="@drawable/google"
+            android:padding="10dp"
+            android:text="Continue with Google"
+            android:textAllCaps="false"
+            android:textSize="16sp"
+            android:textColor="@color/secondary_text"
+            />
 
 
     </LinearLayout>
+
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
